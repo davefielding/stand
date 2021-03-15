@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "315874266800",
+    "project_id": "stand-d0993",
+    "storage_bucket": "stand-d0993.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315874266800:android:6ad085262cce05a9b3f575",
+        "android_client_info": {
+          "package_name": "net.davefielding.stand"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315874266800-1157tuf9cooruune0mu0i2a1a3foo6ev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.davefielding.stand",
+            "certificate_hash": "280f7dd7266502e95f0cf3e74db1eb9965b8fda3"
+          }
+        },
+        {
+          "client_id": "315874266800-ubcs1o3bm832v5a86of9jodqr8nb6l4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmP8PCp6OBcrBvp72Wi2WztAv_ZszEaEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315874266800-ubcs1o3bm832v5a86of9jodqr8nb6l4n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "315874266800-kkfkvbjsbs5cirpa34om1qso1reteq0e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.davefielding.stand"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
