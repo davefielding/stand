@@ -3,6 +3,7 @@ import 'package:built_value/serializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'schema/schema_util.dart';
 import 'schema/serializers.dart';
 import 'schema/standups.dart';
 import 'schema/users.dart';
@@ -10,12 +11,15 @@ import 'schema/users.dart';
 export 'schema/standups.dart';
 export 'schema/users.dart';
 
+CollectionReference get _standUpsCollection => getCollection('stand_ups');
+CollectionReference get usersCollection => getCollection('users');
+
 Stream<List<Users>> queryUsers({
   Query Function(Query) queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
-    queryCollection(Users.collection, Users.serializer,
+    queryCollection(usersCollection, Users.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<Standups>> queryStandups({
@@ -23,7 +27,7 @@ Stream<List<Standups>> queryStandups({
   int limit = -1,
   bool singleRecord = false,
 }) =>
-    queryCollection(Standups.collection, Standups.serializer,
+    queryCollection(_standUpsCollection, Standups.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(
@@ -48,19 +52,23 @@ Stream<List<T>> queryCollection<T>(
 
 // Create a Firestore record representing the logged in user if it doesn't exist
 Future maybeCreateUser(User user) async {
-  final userRecord = Users.collection.doc(user.uid);
+  final userRecord = usersCollection.doc(user.uid);
   final userExists = await userRecord.get().then((u) => u.exists);
   if (userExists) {
     return;
   }
 
-  final email = '';
-  final name = user.displayName;
-
   final userData = createUsersRecordData(
-    email: email,
-    name: name,
+    email: user.email,
+    name: user.displayName,
   );
 
   await userRecord.set(userData);
 }
+
+Stream<Standups> getStandupsDocument(DocumentReference ref) => ref.snapshots().map(
+      (s) => serializers.deserializeWith(
+        Standups.serializer,
+        serializedData(s),
+      ),
+    );

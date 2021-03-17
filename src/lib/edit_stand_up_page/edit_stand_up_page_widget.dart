@@ -1,10 +1,11 @@
 // @dart=2.9
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../view_stand_up_page/view_stand_up_page_widget.dart';
-import '../view_stand_ups/view_stand_ups_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:stand/widgets/stand_app_bar.dart';
+
+import '../flutter_flow/flutter_flow_theme.dart';
+
+import '../view_stand_ups/view_stand_ups_widget.dart';
 
 class EditStandUpPageWidget extends StatefulWidget {
   EditStandUpPageWidget({Key key}) : super(key: key);
@@ -34,86 +35,28 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            InkWell(
+            StandAppBar(
               onTap: () async {
                 await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ViewStandUpsWidget(),
+                    builder: (context) => const ViewStandUpsWidget(),
                   ),
                 );
               },
-              child: Container(
-                width: double.infinity,
-                height: 90,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                alignment: Alignment(0, 0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'STAND',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'FX eCom EMEA Stand-Up',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(0, 0, 10, 10),
-                          child: Container(
-                            width: 80,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Y29tcHV0ZXJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Container(
                 width: 100,
-                height: 65,
+                height: 30,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child: TextFormField(
                     controller: textController,
                     obscureText: false,
@@ -122,12 +65,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       hintStyle: FlutterFlowTheme.subtitle1.override(
                         fontFamily: 'Poppins',
                       ),
-                      enabledBorder: UnderlineInputBorder(
+                      enabledBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1,
                         ),
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(4.0),
                           topRight: Radius.circular(4.0),
                         ),
@@ -142,7 +85,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
               child: Container(
                 width: 100,
                 height: 65,
@@ -150,7 +93,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -163,12 +106,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         color: FlutterFlowTheme.tertiaryColor,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      alignment: Alignment(0, 0),
+                      alignment: const Alignment(0, 0),
                       child: IconButton(
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.minus,
                           color: Colors.black,
                           size: 30,
@@ -201,12 +144,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         color: FlutterFlowTheme.tertiaryColor,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      alignment: Alignment(0, 0),
+                      alignment: const Alignment(0, 0),
                       child: IconButton(
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.plus,
                           color: Colors.black,
                           size: 30,
@@ -219,7 +162,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
               child: Container(
                 width: 100,
                 height: 65,
@@ -227,7 +170,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -240,12 +183,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         color: FlutterFlowTheme.tertiaryColor,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      alignment: Alignment(0, 0),
+                      alignment: const Alignment(0, 0),
                       child: IconButton(
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.minus,
                           color: Colors.black,
                           size: 30,
@@ -278,12 +221,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         color: FlutterFlowTheme.tertiaryColor,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      alignment: Alignment(0, 0),
+                      alignment: const Alignment(0, 0),
                       child: IconButton(
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.plus,
                           color: Colors.black,
                           size: 30,
@@ -296,7 +239,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
               child: Container(
                 width: 100,
                 height: 65,
@@ -304,7 +247,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -317,12 +260,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         color: FlutterFlowTheme.tertiaryColor,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      alignment: Alignment(0, 0),
+                      alignment: const Alignment(0, 0),
                       child: IconButton(
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.minus,
                           color: Colors.black,
                           size: 30,
@@ -355,12 +298,12 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         color: FlutterFlowTheme.tertiaryColor,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      alignment: Alignment(0, 0),
+                      alignment: const Alignment(0, 0),
                       child: IconButton(
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.plus,
                           color: Colors.black,
                           size: 30,
@@ -377,7 +320,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.vertical,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading: FaIcon(
                       FontAwesomeIcons.userAlt,
                       color: Colors.black,
@@ -395,7 +338,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                     tileColor: Color(0xFFF5F5F5),
                     dense: false,
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: FaIcon(
                       FontAwesomeIcons.userAlt,
                       color: Colors.black,
@@ -413,7 +356,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                     tileColor: Color(0xFFF5F5F5),
                     dense: false,
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(
                       Icons.person,
                       color: Colors.black,
@@ -431,168 +374,6 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                     tileColor: Color(0xFFF5F5F5),
                     dense: false,
                   ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Andrada',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Siri',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Lax',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Ioannis',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Yousaf',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Serena',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Brad',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Melinda',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.person,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    title: Text(
-                      'Graham',
-                      style: TextStyle(),
-                    ),
-                    trailing: Icon(
-                      Icons.delete,
-                      color: FlutterFlowTheme.tertiaryColor,
-                      size: 24,
-                    ),
-                    tileColor: Color(0xFFF5F5F5),
-                    dense: false,
-                  )
                 ],
               ),
             ),
@@ -603,7 +384,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(0),
               ),
-              alignment: Alignment(0, 0),
+              alignment: const Alignment(0, 0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -616,7 +397,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         onPressed: () {
                           print('IconButton pressed ...');
                         },
-                        icon: FaIcon(
+                        icon: const FaIcon(
                           FontAwesomeIcons.plus,
                           color: Colors.black,
                           size: 30,
@@ -635,15 +416,8 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       IconButton(
-                        onPressed: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ViewStandUpPageWidget(),
-                            ),
-                          );
-                        },
-                        icon: FaIcon(
+                        onPressed: () => Navigator.pop(context),
+                        icon: const FaIcon(
                           FontAwesomeIcons.check,
                           color: Colors.black,
                           size: 30,
@@ -663,15 +437,8 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        onPressed: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ViewStandUpPageWidget(),
-                            ),
-                          );
-                        },
-                        icon: FaIcon(
+                        onPressed: () => Navigator.pop(context),
+                        icon: const FaIcon(
                           FontAwesomeIcons.ban,
                           color: Colors.black,
                           size: 30,

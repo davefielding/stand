@@ -1,13 +1,17 @@
 // @dart=2.9
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:stand/backend/schema/standups.dart';
+import 'package:stand/widgets/stand_app_bar.dart';
+
 import '../edit_stand_up_page/edit_stand_up_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../view_stand_ups/view_stand_ups_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RunStandUpPageWidget extends StatefulWidget {
-  RunStandUpPageWidget({Key key}) : super(key: key);
+  RunStandUpPageWidget(this.standup, {Key key}) : super(key: key);
+
+  final Standups standup;
 
   @override
   _RunStandUpPageWidgetState createState() => _RunStandUpPageWidgetState();
@@ -29,54 +33,32 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                 await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ViewStandUpsWidget(),
+                    builder: (context) => const ViewStandUpsWidget(),
                   ),
                 );
               },
               child: Container(
                 width: double.infinity,
                 height: 90,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'STAND',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'FX eCom EMEA Stand-Up',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                    StandAppBar(subtitle: widget.standup.name),
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(0, 0, 10, 10),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 10),
                           child: Container(
                             width: 80,
                             height: 80,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: NetworkImage(
@@ -93,7 +75,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Container(
                 width: MediaQuery.of(context).size.width * 1,
                 height: 65,
@@ -101,7 +83,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -114,7 +96,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                           onPressed: () {
                             print('IconButton pressed ...');
                           },
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.backward,
                             color: Colors.black,
                             size: 30,
@@ -141,7 +123,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                               ),
                             );
                           },
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.pause,
                             color: Colors.black,
                             size: 30,
@@ -164,7 +146,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                           onPressed: () {
                             print('IconButton pressed ...');
                           },
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.stop,
                             color: Colors.black,
                             size: 30,
@@ -186,7 +168,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                           onPressed: () {
                             print('IconButton pressed ...');
                           },
-                          icon: FaIcon(
+                          icon: const FaIcon(
                             FontAwesomeIcons.forward,
                             color: Colors.black,
                             size: 30,
@@ -206,7 +188,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.5,
@@ -214,7 +196,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -232,7 +214,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 55, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 55, 0, 0),
                       child: Text(
                         'Time Remaining',
                         style: FlutterFlowTheme.bodyText1.override(
@@ -251,7 +233,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 5, 10, 20),
+              padding: const EdgeInsets.fromLTRB(10, 5, 10, 20),
               child: Container(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.2,
@@ -259,7 +241,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                alignment: Alignment(0, 0),
+                alignment: const Alignment(0, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,

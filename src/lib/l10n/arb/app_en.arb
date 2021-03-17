@@ -3,5 +3,13 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
-    }
+    },
+    "addNewStandUpCaption": "Add New Stand Up",
+    "@addNewStandUpCaption": {
+        "description": "Text shown in the 'Add New Stand Up' button on the View Stand Ups page"
+    },
+    "appTitle": "STAND",
+    "appSubTitle": "Manage Agile Stand-Ups",
+    "demoStandUpName": "A StandUp",
+    "demoStandUpSubTitle": "5 Members"
 }

@@ -1,10 +1,12 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:stand/flutter_flow/flutter_flow_theme.dart';
+
+import '../backend/schema/standups.dart';
+import '../flutter_flow/flutter_flow_theme.dart';
 
 class StandUpCard extends StatelessWidget {
-  const StandUpCard({
+  const StandUpCard.fromValues({
     @required this.title,
     this.subtitle,
     this.image,
@@ -13,6 +15,20 @@ class StandUpCard extends StatelessWidget {
     this.onDelete,
     Key key,
   }) : super(key: key);
+
+  StandUpCard.fromStandup(
+    Standups standup, {
+    Function onTap,
+    Function onDelete,
+    Function onShare,
+  }) : this.fromValues(
+          title: standup.name,
+          subtitle: '${standup.participants.length} Members',
+          image: NetworkImage(standup.imagePath),
+          onTap: onTap,
+          onDelete: onDelete,
+          onShare: onShare,
+        );
 
   final String title;
   final String subtitle;

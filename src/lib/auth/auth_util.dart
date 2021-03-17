@@ -51,6 +51,6 @@ String get currentUserPhoto => currentUser.maybeWhen(
     );
 
 DocumentReference get currentUserReference => currentUser.maybeWhen(
-      user: (user) => Users.collection.doc(user.uid),
+      user: (user) => usersCollection.doc(user.uid),
       orElse: () => null,
     );

@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 // ignore: avoid_classes_with_only_static_members
 class FlutterFlowTheme {
   static const Color cardBackground = Color(0xFFF5F5F5);
+  static const Color appBackground = Colors.white;
   static const Color primaryColor = Color(0xFF3474E0);
   static const Color secondaryColor = Color(0xFFEE8B60);
   static const Color tertiaryColor = Color(0x7D3474E0);
