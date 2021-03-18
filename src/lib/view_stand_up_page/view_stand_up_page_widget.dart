@@ -2,19 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:stand/view_stand_up_page/stand_up_participant_tile.dart';
 
-import '../backend/backend.dart';
+import '../data/data.dart';
 import '../view_stand_ups/view_stand_ups_widget.dart';
 import '../widgets/stand_app_bar.dart';
 import 'stand_up_management_panel.dart';
 
 class ViewStandUpPageWidget extends StatelessWidget {
-  ViewStandUpPageWidget(this.standup, {Key key}) : super(key: key);
+  ViewStandUpPageWidget(this.standUp, {Key key}) : super(key: key);
 
-  final Standups standup;
+  final StandUp standUp;
 
   @override
   Widget build(BuildContext context) {
-    final participants = standup.participants.values
+    final participants = standUp.participants.values
         .map((p) => StandUpParticipantTile(
               p.name,
             ))
@@ -37,7 +37,7 @@ class ViewStandUpPageWidget extends StatelessWidget {
                 );
               },
             ),
-            StandUpManagementPanel(standup),
+            StandUpManagementPanel(standUp),
             Expanded(
               child: ListView(
                 padding: EdgeInsets.zero,

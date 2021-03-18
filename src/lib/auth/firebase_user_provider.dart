@@ -16,10 +16,23 @@ bool loggedIn = false;
 
 final standFlowFirebaseUser = FirebaseAuth.instance
     .userChanges()
-    .debounce((user) => user == null && !loggedIn ? TimerStream(true, const Duration(seconds: 1)) : Stream.value(user))
+    .debounce((user) => user == null && !loggedIn
+        ? TimerStream(
+            true,
+            const Duration(
+              seconds: 1,
+            ),
+          )
+        : Stream.value(
+            user,
+          ))
     .map<StandFlowFirebaseUser>((user) {
   loggedIn = user != null;
-  return user != null ? StandFlowFirebaseUser.user(user) : StandFlowFirebaseUser.loggedOut();
+  return user != null
+      ? StandFlowFirebaseUser.user(
+          user,
+        )
+      : StandFlowFirebaseUser.loggedOut();
 }).shareValueSeeded(StandFlowFirebaseUser.initial());
 
 StandFlowFirebaseUser get currentUser => standFlowFirebaseUser.value ?? StandFlowFirebaseUser.loggedOut();

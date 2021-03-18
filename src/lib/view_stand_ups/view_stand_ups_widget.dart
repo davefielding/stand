@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../backend/backend.dart';
+import '../data/data.dart';
 import '../view_stand_up_page/view_stand_up_page_widget.dart';
 import '../widgets/stand_app_bar.dart';
 import 'add_new_stand_ups_button.dart';
@@ -49,7 +49,7 @@ class ViewStandUpsView extends StatelessWidget {
     );
   }
 
-  Widget buildStandUpCard(BuildContext context, Standups standup) {
+  Widget buildStandUpCard(BuildContext context, StandUp standup) {
     return StandUpCard.fromStandup(
       standup,
       onTap: () async {

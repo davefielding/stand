@@ -4,16 +4,16 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'person.dart';
-import 'serializers.dart';
+import '../data.dart';
+import '../serializers.dart';
 
-part 'standups.g.dart';
+part 'stand_up.g.dart';
 
-abstract class Standups implements Built<Standups, StandupsBuilder> {
-  Standups._();
-  factory Standups([void Function(StandupsBuilder) updates]) = _$Standups;
+abstract class StandUp implements Built<StandUp, StandUpBuilder> {
+  StandUp._();
+  factory StandUp([void Function(StandUpBuilder) updates]) = _$StandUp;
 
-  static Serializer<Standups> get serializer => _$standupsSerializer;
+  static Serializer<StandUp> get serializer => _$standUpSerializer;
 
   @BuiltValueField(wireName: 'name')
   String get name;

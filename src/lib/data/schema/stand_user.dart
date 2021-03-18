@@ -3,15 +3,15 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'serializers.dart';
+import '../serializers.dart';
 
-part 'users.g.dart';
+part 'stand_user.g.dart';
 
-abstract class Users implements Built<Users, UsersBuilder> {
-  Users._();
-  factory Users([void Function(UsersBuilder) updates]) = _$Users;
+abstract class StandUser implements Built<StandUser, StandUserBuilder> {
+  StandUser._();
+  factory StandUser([void Function(StandUserBuilder) updates]) = _$StandUser;
 
-  static Serializer<Users> get serializer => _$usersSerializer;
+  static Serializer<StandUser> get serializer => _$standUserSerializer;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
@@ -24,7 +24,7 @@ Map<String, dynamic> createUsersRecordData({
   String name,
 }) =>
     serializers.serializeWith(
-        Users.serializer,
-        Users((u) => u
+        StandUser.serializer,
+        StandUser((u) => u
           ..email = email
           ..name = name));

@@ -2,18 +2,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../backend/schema/standups.dart';
+import '../data/data.dart';
 import '../edit_stand_up_page/edit_stand_up_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../run_stand_up_page/run_stand_up_page_widget.dart';
 
 class StandUpManagementPanel extends StatelessWidget {
   const StandUpManagementPanel(
-    this.standup, {
+    this.standUp, {
     Key key,
   }) : super(key: key);
 
-  final Standups standup;
+  final StandUp standUp;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class StandUpManagementPanel extends StatelessWidget {
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RunStandUpPageWidget(standup),
+                        builder: (context) => RunStandUpPageWidget(standUp),
                       ),
                     );
                   },

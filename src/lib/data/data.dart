@@ -3,31 +3,32 @@ import 'package:built_value/serializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'schema/schema_util.dart';
-import 'schema/serializers.dart';
-import 'schema/standups.dart';
-import 'schema/users.dart';
+import 'schema/stand_up.dart';
+import 'schema/stand_user.dart';
+import 'schema_util.dart';
+import 'serializers.dart';
 
-export 'schema/standups.dart';
-export 'schema/users.dart';
+export 'schema/person.dart';
+export 'schema/stand_up.dart';
+export 'schema/stand_user.dart';
 
 CollectionReference get _standUpsCollection => getCollection('stand_ups');
 CollectionReference get usersCollection => getCollection('users');
 
-Stream<List<Users>> queryUsers({
+Stream<List<StandUser>> queryUsers({
   Query Function(Query) queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
-    queryCollection(usersCollection, Users.serializer,
+    queryCollection(usersCollection, StandUser.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Stream<List<Standups>> queryStandups({
+Stream<List<StandUp>> queryStandups({
   Query Function(Query) queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
-    queryCollection(_standUpsCollection, Standups.serializer,
+    queryCollection(_standUpsCollection, StandUp.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(
@@ -66,9 +67,12 @@ Future maybeCreateUser(User user) async {
   await userRecord.set(userData);
 }
 
-Stream<Standups> getStandupsDocument(DocumentReference ref) => ref.snapshots().map(
-      (s) => serializers.deserializeWith(
-        Standups.serializer,
-        serializedData(s),
-      ),
-    );
+Stream<StandUp> getStandupsDocument(
+  DocumentReference ref,
+) =>
+    ref.snapshots().map(
+          (s) => serializers.deserializeWith(
+            StandUp.serializer,
+            serializedData(s),
+          ),
+        );

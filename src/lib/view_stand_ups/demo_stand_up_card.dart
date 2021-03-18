@@ -1,7 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 
-import '../backend/backend.dart';
+import '../data/data.dart';
 import '../l10n/l10n.dart';
 import '../view_stand_up_page/view_stand_up_page_widget.dart';
 import 'stand_up_card.dart';
@@ -23,7 +23,7 @@ class DemoStandUpCard extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => ViewStandUpPageWidget(
-              StandupsBuilder().build(),
+              StandUpBuilder().build(),
             ),
           ),
         );

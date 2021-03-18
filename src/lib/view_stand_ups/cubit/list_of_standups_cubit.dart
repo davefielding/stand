@@ -2,24 +2,25 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:stand/auth/auth_util.dart';
-import 'package:stand/backend/backend.dart';
 
-class ListOfStandUpsCubit extends Cubit<List<Standups>> {
+import '../../data/data.dart';
+
+class ListOfStandUpsCubit extends Cubit<List<StandUp>> {
   ListOfStandUpsCubit.fromStream(
-    Stream<List<Standups>> stream,
-  ) : super(<Standups>[]) {
+    Stream<List<StandUp>> stream,
+  ) : super(<StandUp>[]) {
     stream.listen(_updateStandups);
   }
 
   ListOfStandUpsCubit() : this.fromStream(StandupsProvider().getStandups());
 
-  void _updateStandups(List<Standups> standups) {
+  void _updateStandups(List<StandUp> standups) {
     emit(standups);
   }
 }
 
 class StandupsProvider {
-  Stream<List<Standups>> getStandups() {
+  Stream<List<StandUp>> getStandups() {
     return queryStandups(queryBuilder: defineStandupsQuery);
   }
 

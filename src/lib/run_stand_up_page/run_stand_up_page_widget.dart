@@ -1,17 +1,17 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:stand/backend/schema/standups.dart';
-import 'package:stand/widgets/stand_app_bar.dart';
 
+import '../data/data.dart';
 import '../edit_stand_up_page/edit_stand_up_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../view_stand_ups/view_stand_ups_widget.dart';
+import '../widgets/stand_app_bar.dart';
 
 class RunStandUpPageWidget extends StatefulWidget {
   RunStandUpPageWidget(this.standup, {Key key}) : super(key: key);
 
-  final Standups standup;
+  final StandUp standup;
 
   @override
   _RunStandUpPageWidgetState createState() => _RunStandUpPageWidgetState();

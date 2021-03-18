@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../backend/schema/standups.dart';
+import '../data/data.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 
 class StandUpCard extends StatelessWidget {
@@ -17,7 +17,7 @@ class StandUpCard extends StatelessWidget {
   }) : super(key: key);
 
   StandUpCard.fromStandup(
-    Standups standup, {
+    StandUp standup, {
     Function onTap,
     Function onDelete,
     Function onShare,
