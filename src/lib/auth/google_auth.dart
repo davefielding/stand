@@ -14,7 +14,9 @@ Future signInWithGoogle(BuildContext context) async {
       return null;
     }
     final credential = GoogleAuthProvider.credential(
-        idToken: auth.idToken, accessToken: auth.accessToken);
+      idToken: auth.idToken,
+      accessToken: auth.accessToken,
+    );
     return FirebaseAuth.instance.signInWithCredential(credential);
   };
   return signInOrCreateAccount(context, signInFunc);

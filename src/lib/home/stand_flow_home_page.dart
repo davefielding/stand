@@ -15,7 +15,7 @@ class StandFlowHomePage extends StatelessWidget {
       initialData: standFlowFirebaseUser.valueWrapper.value,
       builder: (context, snapshot) {
         return snapshot.data.when(
-          user: (_) => ViewStandUpsWidget(),
+          user: (_) => const ViewStandUpsWidget(),
           loggedOut: () => LoginPageWidget(),
           initial: () => Container(
             color: Colors.white,

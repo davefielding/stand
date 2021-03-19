@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,21 +5,28 @@ import 'package:google_fonts/google_fonts.dart';
 class FlutterFlowTheme {
   static const Color cardBackground = Color(0xFFF5F5F5);
   static const Color appBackground = Colors.white;
+  static const Color flatButtonBackground = Color(0xFFAAAAAA);
+  static const Color textFieldBackground = Color(0xFFE0E0E0);
   static const Color primaryColor = Color(0xFF3474E0);
   static const Color secondaryColor = Color(0xFFEE8B60);
   static const Color tertiaryColor = Color(0x7D3474E0);
 
-  String primaryFontFamily = 'Arsenal';
-  String secondaryFontFamily = 'Roboto';
+  static const Color primaryTextColor = Colors.black;
+  static const Color secondaryTextColor = Color(0xFF424242);
+  static const Color contrastTextColor = Colors.white;
+  static const Color hintTextColor = Color(0xFF455A64);
+
+  static String primaryFontFamily = 'Arsenal';
+  static String secondaryFontFamily = 'Roboto';
 
   static TextStyle get title1 => GoogleFonts.getFont(
-        'Poppins',
-        color: Colors.black,
+        primaryFontFamily,
+        color: primaryTextColor,
         fontWeight: FontWeight.bold,
         fontSize: 40,
       );
   static TextStyle get title2 => GoogleFonts.getFont(
-        'Quicksand',
+        secondaryFontFamily,
         color: primaryColor,
         fontWeight: FontWeight.bold,
         fontSize: 28,
@@ -32,42 +38,76 @@ class FlutterFlowTheme {
         fontSize: 24,
       );
   static TextStyle get subtitle1 => GoogleFonts.getFont(
-        'Poppins',
-        color: const Color(0xFF424242),
+        primaryFontFamily,
+        color: secondaryTextColor,
         fontWeight: FontWeight.bold,
         fontSize: 20,
       );
   static TextStyle get subtitle2 => GoogleFonts.getFont(
-        'Quicksand',
+        secondaryFontFamily,
         color: Colors.white,
         fontWeight: FontWeight.w500,
         fontSize: 18,
       );
   static TextStyle get bodyText1 => GoogleFonts.getFont(
-        'Poppins',
-        color: Colors.black,
+        primaryFontFamily,
+        color: primaryTextColor,
         fontWeight: FontWeight.normal,
         fontSize: 14,
       );
   static TextStyle get bodyText2 => GoogleFonts.getFont(
-        'Quicksand',
-        color: const Color(0xFF424242),
+        secondaryFontFamily,
+        color: secondaryTextColor,
         fontWeight: FontWeight.w300,
         fontSize: 14,
       );
+  static TextStyle get contrastText => bodyText1.override(
+        primaryFontFamily,
+        color: contrastTextColor,
+      );
+  static TextStyle get hintText => GoogleFonts.getFont(
+        primaryFontFamily,
+        color: hintTextColor,
+        fontWeight: FontWeight.normal,
+      );
+  static TextStyle get hyperlinkText => bodyText1.override(
+        primaryFontFamily,
+        color: primaryColor,
+        decoration: TextDecoration.underline,
+      );
+
+  static ButtonStyle flatButtonStyle = ButtonStyle(
+    backgroundColor: MaterialStateProperty.resolveWith<Color>(
+      (states) => flatButtonBackground,
+    ),
+    textStyle: MaterialStateProperty.resolveWith<TextStyle>(
+      (states) => bodyText1,
+    ),
+    foregroundColor: MaterialStateProperty.resolveWith<Color>(
+      (states) => primaryTextColor,
+    ),
+  );
 }
 
 extension TextStyleHelper on TextStyle {
-  TextStyle override({
-    String fontFamily,
-    Color color,
-    double fontSize,
-    FontWeight fontWeight,
-  }) =>
-      GoogleFonts.getFont(
-        fontFamily,
-        color: color ?? this.color,
-        fontSize: fontSize ?? this.fontSize,
-        fontWeight: fontWeight ?? this.fontWeight,
-      );
+  TextStyle override(
+    String fontFamily, {
+    Color? color,
+    double? fontSize,
+    FontWeight? fontWeight,
+    TextDecoration? decoration,
+  }) {
+    var result = GoogleFonts.getFont(
+      fontFamily,
+      color: color ?? this.color,
+      fontSize: fontSize ?? this.fontSize,
+      fontWeight: fontWeight ?? this.fontWeight,
+    );
+
+    if (decoration != null) {
+      result = result.apply(decoration: decoration);
+    }
+
+    return result;
+  }
 }

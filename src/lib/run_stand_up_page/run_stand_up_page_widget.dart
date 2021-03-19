@@ -105,9 +105,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                         ),
                         Text(
                           'Previous',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     ),
@@ -132,9 +130,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                         ),
                         Text(
                           'Pause',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     ),
@@ -155,9 +151,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                         ),
                         Text(
                           'Stop',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     ),
@@ -177,9 +171,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                         ),
                         Text(
                           'Next',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     )
@@ -203,30 +195,22 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                   children: [
                     Text(
                       'Current Update:',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                      ),
+                      style: FlutterFlowTheme.bodyText1,
                     ),
                     Text(
                       'Dave',
-                      style: FlutterFlowTheme.title1.override(
-                        fontFamily: 'Poppins',
-                      ),
+                      style: FlutterFlowTheme.title1,
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 55, 0, 0),
                       child: Text(
                         'Time Remaining',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
+                        style: FlutterFlowTheme.bodyText1,
                       ),
                     ),
                     Text(
                       '15s',
-                      style: FlutterFlowTheme.title1.override(
-                        fontFamily: 'Poppins',
-                      ),
+                      style: FlutterFlowTheme.title1,
                     )
                   ],
                 ),
@@ -248,15 +232,11 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                   children: [
                     Text(
                       'Up Next',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                      ),
+                      style: FlutterFlowTheme.bodyText1,
                     ),
                     Text(
                       'Baur',
-                      style: FlutterFlowTheme.title1.override(
-                        fontFamily: 'Poppins',
-                      ),
+                      style: FlutterFlowTheme.title1,
                     )
                   ],
                 ),

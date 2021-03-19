@@ -1,15 +1,17 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    },
-    "addNewStandUpCaption": "Add New Stand Up",
-    "@addNewStandUpCaption": {
-        "description": "Text shown in the 'Add New Stand Up' button on the View Stand Ups page"
-    },
+
+    "counterAppBarTitle": "Counter", "@counterAppBarTitle": { "description": "Text shown in the AppBar of the Counter Page" },
+    "addNewStandUpCaption": "Add New Stand Up", "@addNewStandUpCaption": { "description": "Text shown in the 'Add New Stand Up' button on the View Stand Ups page" },
     "appTitle": "STAND",
     "appSubTitle": "Manage Agile Stand-Ups",
     "demoStandUpName": "A StandUp",
-    "demoStandUpSubTitle": "5 Members"
+    "demoStandUpSubTitle": "5 Members",
+    "emailTextboxHint": "Email", "@emailTextboxHint": {"description": "Hint text for the email textbox on the login page" },
+    "passwordTextboxHint": "Password", "@passwordTextboxHint": { "description": "Hint text for the password box on the login page" },
+    "signInButtonCaption": "Sign in", "@signInButtonCaption": { "description": "Caption for the sign-in button on the login page" },
+    "forgotPasswordLinkCaption": "Forgot password?", "@forgotPasswordLinkCaption": { "description": "Text displayed on the link to take users to the reset password page" },
+    "noAccountInfoIntro": "Don't have an account?", "@noAccountInfoIntro": { "description": "Intro to the link allowing users to register" },
+    "signUpLinkCaption": "Sign Up", "@signUpLinkCaption": { "description": "Caption for link taking users to the new user registration page" },
+    "comingSoon": "Coming Soon!", "@comingSoon": { "description" : "Caption used when features are used that are not yet implemented" }
 }

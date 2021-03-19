@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +12,14 @@ export 'google_auth.dart';
 /// Returns whether the sign in/createAccount action was successful.
 Future<bool> signInOrCreateAccount(
   BuildContext context,
-  Future<UserCredential> Function() signInFunc,
+  Future<UserCredential?> Function() signInFunc,
 ) async {
   try {
     final user = await signInFunc();
+    if (user == null) {
+      return false;
+    }
+
     await maybeCreateUser(user.user);
   } on FirebaseAuthException catch (e) {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -30,7 +33,7 @@ Future<bool> signInOrCreateAccount(
 
 Future signOut() => FirebaseAuth.instance.signOut();
 
-String get currentUserEmail => currentUser.maybeWhen(
+String? get currentUserEmail => currentUser.maybeWhen(
       user: (user) => user.email,
       orElse: () => '',
     );
@@ -40,17 +43,17 @@ String get currentUserUid => currentUser.maybeWhen(
       orElse: () => '',
     );
 
-String get currentUserDisplayName => currentUser.maybeWhen(
+String? get currentUserDisplayName => currentUser.maybeWhen(
       user: (user) => user.displayName,
       orElse: () => '',
     );
 
-String get currentUserPhoto => currentUser.maybeWhen(
+String? get currentUserPhoto => currentUser.maybeWhen(
       user: (user) => user.photoURL,
       orElse: () => '',
     );
 
-DocumentReference get currentUserReference => currentUser.maybeWhen(
+DocumentReference? get currentUserReference => currentUser.maybeWhen(
       user: (user) => usersCollection.doc(user.uid),
       orElse: () => null,
     );

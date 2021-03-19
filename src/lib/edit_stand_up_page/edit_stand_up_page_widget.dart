@@ -62,9 +62,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       hintText: 'Enter Stand-Up Name',
-                      hintStyle: FlutterFlowTheme.subtitle1.override(
-                        fontFamily: 'Poppins',
-                      ),
+                      hintStyle: FlutterFlowTheme.subtitle1,
                       enabledBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.transparent,
@@ -76,9 +74,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                         ),
                       ),
                     ),
-                    style: FlutterFlowTheme.subtitle1.override(
-                      fontFamily: 'Poppins',
-                    ),
+                    style: FlutterFlowTheme.subtitle1,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -125,15 +121,11 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       children: [
                         Text(
                           'START TIME',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         ),
                         Text(
                           '10:00 AM',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     ),
@@ -202,15 +194,11 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       children: [
                         Text(
                           'DURATION',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         ),
                         Text(
                           '45s',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     ),
@@ -279,15 +267,11 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       children: [
                         Text(
                           'ORDER',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         ),
                         Text(
                           'RANDOM',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         )
                       ],
                     ),
@@ -406,9 +390,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       ),
                       Text(
                         'Add',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
+                        style: FlutterFlowTheme.bodyText1,
                       )
                     ],
                   ),
@@ -426,9 +408,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       ),
                       Text(
                         'Save',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
+                        style: FlutterFlowTheme.bodyText1,
                       )
                     ],
                   ),
@@ -447,9 +427,7 @@ class _EditStandUpPageWidgetState extends State<EditStandUpPageWidget> {
                       ),
                       Text(
                         'Cancel',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                        ),
+                        style: FlutterFlowTheme.bodyText1,
                       )
                     ],
                   )
