@@ -1,4 +1,6 @@
 // @dart=2.9
+import 'dart:developer';
+
 import 'package:built_value/serializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -53,12 +55,15 @@ Stream<List<T>> queryCollection<T>(
 
 // Create a Firestore record representing the logged in user if it doesn't exist
 Future maybeCreateUser(User user) async {
+  log('Attemping to locate user document for ${user.uid}');
   final userRecord = usersCollection.doc(user.uid);
-  final userExists = await userRecord.get().then((u) => u.exists);
+  final userExists = await userRecord.get().then((u) => u?.exists ?? false);
   if (userExists) {
+    log('Document located');
     return;
   }
 
+  log('Creating user record for ${user.email}');
   final userData = createUsersRecordData(
     email: user.email,
     name: user.displayName,

@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -24,7 +25,7 @@ class StandUpCard extends StatelessWidget {
   }) : this.fromValues(
           title: standup.name,
           subtitle: '${standup.participants.length} Members',
-          image: NetworkImage(standup.imagePath),
+          image: CachedNetworkImageProvider(standup.imagePath),
           onTap: onTap,
           onDelete: onDelete,
           onShare: onShare,
@@ -79,7 +80,7 @@ class StandUpCard extends StatelessWidget {
                     ),
                     Text(
                       subtitle,
-                      style: FlutterFlowTheme.bodyText1,
+                      style: FlutterFlowTheme.bodyText2,
                     )
                   ],
                 )

@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../data/data.dart';
@@ -16,7 +17,7 @@ class DemoStandUpCard extends StatelessWidget {
     return StandUpCard.fromValues(
       title: context.l10n.demoStandUpName,
       subtitle: context.l10n.demoStandUpSubTitle,
-      image: const NetworkImage(
+      image: const CachedNetworkImageProvider(
           'https://images.unsplash.com/photo-1575535468632-345892291673?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
       onTap: () async {
         await Navigator.pushReplacement(

@@ -61,8 +61,7 @@ class StandAppBar extends StatelessWidget {
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: NetworkImage(
-                            'https://images.unsplash.com/photo-1586892477901-f70e288a7318?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8c2NydW18ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
+                        image: AssetImage('assets/images/post-it-notes.jfif'),
                         fit: BoxFit.cover,
                       ),
                     ),

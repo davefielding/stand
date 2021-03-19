@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../data/data.dart';
 import '../edit_stand_up_page/edit_stand_up_page_widget.dart';
@@ -61,7 +62,7 @@ class _RunStandUpPageWidgetState extends State<RunStandUpPageWidget> {
                             decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                image: NetworkImage(
+                                image: CachedNetworkImageProvider(
                                     'https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8Y29tcHV0ZXJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'),
                                 fit: BoxFit.cover,
                               ),
