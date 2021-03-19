@@ -7,8 +7,8 @@ class FlutterFlowTheme {
   static const Color appBackground = Colors.white;
   static const Color flatButtonBackground = Color(0xFFAAAAAA);
   static const Color textFieldBackground = Color(0xFFE0E0E0);
-  static const Color primaryColor = Color(0xFF3474E0);
-  static const Color secondaryColor = Color(0xFFEE8B60);
+  static const Color primaryColor = Color(0xFF295CB3);
+  static const Color secondaryColor = Color(0xFFB3295C);
   static const Color tertiaryColor = Color(0x7D3474E0);
 
   static const Color primaryTextColor = Colors.black;
@@ -16,17 +16,21 @@ class FlutterFlowTheme {
   static const Color contrastTextColor = Colors.white;
   static const Color hintTextColor = Color(0xFF455A64);
 
-  static String primaryFontFamily = 'Arsenal';
-  static String secondaryFontFamily = 'Roboto';
+  static String primaryFontFamily = 'Poppins';
+  static String secondaryFontFamily = 'Quicksand';
 
   static TextStyle get title1 => GoogleFonts.getFont(
-        primaryFontFamily,
+        //'Julius Sans One',
+        //'Arima Madurai',
+        'Fredericka the Great',
         color: primaryTextColor,
-        fontWeight: FontWeight.bold,
-        fontSize: 40,
+        // fontWeight: FontWeight.bold,
+        // fontStyle: FontStyle.italic,
+        fontSize: 50,
       );
   static TextStyle get title2 => GoogleFonts.getFont(
-        secondaryFontFamily,
+        //'Roboto Condensed',
+        'Pavanam',
         color: primaryColor,
         fontWeight: FontWeight.bold,
         fontSize: 28,
@@ -95,12 +99,14 @@ extension TextStyleHelper on TextStyle {
     Color? color,
     double? fontSize,
     FontWeight? fontWeight,
+    FontStyle? fontStyle,
     TextDecoration? decoration,
   }) {
     var result = GoogleFonts.getFont(
       fontFamily,
       color: color ?? this.color,
       fontSize: fontSize ?? this.fontSize,
+      fontStyle: fontStyle ?? this.fontStyle,
       fontWeight: fontWeight ?? this.fontWeight,
     );
 
